@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package sec05.v2;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.model.sec05.v2";
+
+enum Type {
+  Unknown = 0;
+  HD = 1;
+  UHD = 2;
+  OLED = 3;
+}
+
+message Television {
+  string brand = 1;
+  // year replaced with model
+  int32 model = 2;
+  Type type = 3;
+}

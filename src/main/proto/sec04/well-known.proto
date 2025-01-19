@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package sec04;
+
+import "google/protobuf/wrappers.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.model.sec04";
+
+message Sample {
+  // compare with hasAge() previously used
+  google.protobuf.Int32Value age = 1;
+  google.protobuf.Timestamp login_time = 2;   // generated obj will be Wrappers
+  int32 year = 3;
+  optional int32 optional_year = 4;  // generated obj will be primitive type
+}

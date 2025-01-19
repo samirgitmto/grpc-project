@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package sec05.v3;
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.model.sec05.v3";
+
+enum Type {
+  Unknown = 0;
+  HD = 1;
+  UHD = 2;
+  OLED = 3;
+}
+
+/*
+Requirement: model no longer needed
+ */
+
+message Television {
+  string brand = 1;
+  // year/model both removed at index 2
+  reserved 2;
+  reserved "year", "model";
+//  int32 model = 4;   // reserved will make sure this does not get assigned again
+  Type type = 3;
+}
